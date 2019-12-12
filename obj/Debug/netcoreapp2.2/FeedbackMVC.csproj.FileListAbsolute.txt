@@ -28,3 +28,4 @@ C:\Users\54094513841\Desktop\FeedbackMVC\obj\Debug\netcoreapp2.2\FeedbackMVC.Vie
 C:\Users\54094513841\Desktop\FeedbackMVC\obj\Debug\netcoreapp2.2\FeedbackMVC.dll
 C:\Users\54094513841\Desktop\FeedbackMVC\obj\Debug\netcoreapp2.2\FeedbackMVC.pdb
 C:\Users\54094513841\Desktop\FeedbackMVC\obj\Debug\netcoreapp2.2\FeedbackMVC.csproj.CopyComplete
+C:\Users\54094513841\Desktop\FeedbackMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\login.g.cshtml.cs
