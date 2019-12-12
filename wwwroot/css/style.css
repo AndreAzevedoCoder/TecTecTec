@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body,main{
+    height: 100%;
+}
+body{
+    background-color:#260527;
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+header{
+    height: 3.5em;
+    width: 100%;
+    background-color: #161615;
+}
+
+
+
+
+main{
+
+
+    display: flex;
+}
+
+.CriarPost
+{
+    display: flex;
+    margin-bottom: 2em;
+    padding: 2em;
+    background-color: #431969;
+
+    width: 40em;
+
+
+}
+
+.CriarPostMensagem
+{
+/* 
+    
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    padding: 1em; */
+    border: none;
+    background-color: transparent;
+    font-family: 'Bitter', serif;
+	width:100%;
+	box-sizing:border-box;
+	max-width:100%;
+    border-radius:3px;
+    color: #ebf0f6;
+    outline: none;
+    resize: none;
+    margin-left: 2em;
+
+
+}
+.CriarPostMensagem::placeholder
+{
+    color: #ebf0f6;
+}
+
+.Post
+{
+    
+    padding: 2em;
+    background-color: #431969;
+    height: fit-content;
+    width: 40em;
+
+    border-style: solid;
+    border-width: 0.5px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.PostHeader *{
+    
+    display: inline;
+}
+
+.PostHeader{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-bottom: 1em;
+}
+.PostUserInformacao{
+    display: flex;
+    flex-direction: column;
+}
+.PostDonoNome{
+    margin-left: 1em;
+    color: #ebf0f6;
+    clear: both;
+}
+.PostDonoUsuario
+{
+    margin-left: 1em;
+    color: #bda9d1;
+    clear: both;
+}
+.PostImagemPerfil
+{
+    
+    border-radius: 35px;
+    widows: 4em;
+    height: 4em;
+
+}
+
+.PostMensagem
+{
+    display: block; /* or inline-block */
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    line-height: 1.8em;
+    width: fit-content;
+    color: #ebf0f6;
+}
+
+
+
+.PostBody{
+
+    display: flex;
+    justify-content: center;
+}
+
+.PostFooter{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5em;
+}
+.PostFooter *{
+    color: white;
+}
+
+
+
+
+
+
+/* .BotaoFlutuanteEscreverMensagem{
+    position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#e3b04b;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+.BotaoFlutuanteIcone{
+    margin-top:12px;
+    margin-left: 3px;
+} */

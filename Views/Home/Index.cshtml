@@ -1,0 +1,44 @@
+﻿@model FeedbackMVC.ViewModels.ClienteViewModel
+
+        <main>
+            @if(Model.UsuarioLogado != "")
+            {
+                <div class="CriarPost">
+                    <div class="PostHeader">
+                        <img class="PostImagemPerfil" src="img/profiledefault.jpg">
+                    </div>
+                    <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+                    <textarea class="CriarPostMensagem" placeholder="Poste uma mensagem..."></textarea>
+                </div>
+            }
+
+            @foreach(Post post in Model.PostsDeTodos){
+
+                <div class="Post">
+                    <div class="PostHeader">
+                        <img class="PostImagemPerfil" src="img/profiledefault.jpg">
+                        <div class="PostUserInformacao">
+                            <p class="PostDonoNome">@post.DonoDoPost</p>
+                            <p class="PostDonoUsuario">@post.DonoDoPostArroba</p>
+                        </div>
+                    </div>
+                    <div class="PostBody">
+                        <p class="PostMensagem">@post.MensagemDoPost</p>
+                    </div>
+                    <div class="PostFooter">
+                        <i class="far fa-comment"></i>
+                        <i class="fas fa-retweet"></i>
+                        <i class="far fa-heart"></i>
+                    </div>
+
+                </div>
+
+            }
+
+        </main>
+        <!-- <a href="#" class="BotaoFlutuanteEscreverMensagem">
+            <i class="fa fa-2x fa-edit BotaoFlutuanteIcone"></i>
+        </a> -->
+
+        <script src="js/main.js">
+        </script>
