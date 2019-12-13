@@ -14,6 +14,13 @@ namespace FeedbackMVC.Models
         public ulong IDDaListaDeComentarios {get;set;}
         public List<Comentario> ComentariosDoPost {get;set;}
 
+        public Post()
+        {
+            this.ID = 0;
+            this.Curtidas = 0;
+            
+        }
+
 
 
         

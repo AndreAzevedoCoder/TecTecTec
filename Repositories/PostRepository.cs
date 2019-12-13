@@ -14,6 +14,8 @@ namespace FeedbackMVC.Repositories
         }
 
         public bool Inserir (Post post){
+            var quantidadeLinhas = File.ReadAllLines(PATH).Length;
+            post.ID = (ulong) ++quantidadeLinhas;
             var linha = new string[] {PrepararRegistroCSV(post)};
             File.AppendAllLines(PATH, linha);
             

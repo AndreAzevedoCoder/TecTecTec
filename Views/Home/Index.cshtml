@@ -8,7 +8,14 @@
                         <img class="PostImagemPerfil" src="img/profiledefault.jpg">
                     </div>
                     <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
-                    <textarea class="CriarPostMensagem" placeholder="Poste uma mensagem..."></textarea>
+                     <form class="FormCriarPost" method="POST" action='@Url.Action("Postar", "Home")'>
+                        <textarea class="CriarPostMensagem" name="MensagemDoPost" placeholder="Poste uma mensagem..."></textarea>
+                        <div class="BotaoCriarPostDiv">
+                            <input class="BotaoCriarPost" type="submit" value="Postar">
+
+                        </div>
+                     </form>
+
                 </div>
             }
 

@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\FeedbackMVC.csproj",
+  "FilePath": "/home/satva/Documentos/TecTecTec/FeedbackMVC.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2961,48 +2961,43 @@
   "RootNamespace": "FeedbackMVC",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "/home/satva/Documentos/TecTecTec/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\Views\\Shared\\_CookieConsentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FilePath": "/home/satva/Documentos/TecTecTec/Views/Shared/_CookieConsentPartial.cshtml",
+      "TargetPath": "Views/Shared/_CookieConsentPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "/home/satva/Documentos/TecTecTec/Views/Cliente/login.cshtml",
+      "TargetPath": "Views/Cliente/login.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "/home/satva/Documentos/TecTecTec/Views/_ViewImports.cshtml",
+      "TargetPath": "Views/_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "/home/satva/Documentos/TecTecTec/Views/Shared/Error.cshtml",
+      "TargetPath": "Views/Shared/Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\Views\\Cliente\\login.cshtml",
-      "TargetPath": "Views\\Cliente\\login.cshtml",
+      "FilePath": "/home/satva/Documentos/TecTecTec/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views/Shared/_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "/home/satva/Documentos/TecTecTec/Views/Home/Index.cshtml",
+      "TargetPath": "Views/Home/Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\54094513841\\Desktop\\FeedbackMVC\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "/home/satva/Documentos/TecTecTec/Views/_ViewStart.cshtml",
+      "TargetPath": "Views/_ViewStart.cshtml",
       "FileKind": "mvc"
     }
   ],

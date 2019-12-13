@@ -41,6 +41,29 @@ namespace FeedbackMVC.Repositories
 
 
         }
+        public Cliente ObterUsuarioPorArroba(string arroba)
+        {
+            //TODO CRIA NOVA LISTA DE POSTS VAZIA PARA RECEBER OS POSTS
+            var linhas = File.ReadAllLines(PATH);
+
+            foreach(var linha in linhas){
+
+                if(ExtrairValorDoCampo("Usuario_Arroba", linha) == arroba)
+                {
+                    Cliente c = new Cliente();
+                    c.ID = ulong.Parse(ExtrairValorDoCampo("ID", linha));
+                    c.UsuarioNome = ExtrairValorDoCampo("Usuario_Nome", linha);
+                    c.UsuarioArroba = ExtrairValorDoCampo("Usuario_Arroba", linha);
+                    c.Bio = ExtrairValorDoCampo("Bio", linha);
+                    c.Senha = ExtrairValorDoCampo("Senha", linha);
+                    return c;
+                }
+
+            }
+            return null;
+
+
+        }
 
         public bool Existe(string oque, string na_onde)
         {

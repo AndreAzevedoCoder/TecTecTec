@@ -15,6 +15,7 @@ namespace FeedbackMVC.Controllers
     public class HomeController : AbstractController
     {
         PostRepository postRepository = new PostRepository();
+        ClienteRepository clienteRepository = new ClienteRepository();
         public IActionResult Index()
         {
 
@@ -33,6 +34,28 @@ namespace FeedbackMVC.Controllers
             
             return View(clienteviewmodel);
         }
+
+
+        [HttpPost]
+        public IActionResult Postar(IFormCollection form)
+        {
+            Post post = new Post();
+            Cliente cliente = clienteRepository.ObterPorArroba(ObterUsuarioSession());
+            post.DonoDoPost = cliente.UsuarioNome;
+            post.DonoDoPostArroba = cliente.UsuarioArroba;
+            post.Curtidas = 0;
+            post.MensagemDoPost = form["MensagemDoPost"];
+            postRepository.Inserir(post);
+
+            ClienteViewModel clienteviewmodel = new ClienteViewModel();
+            clienteviewmodel.PostsDeTodos = postRepository.ObterTodosOsPosts();
+            clienteviewmodel.UsuarioLogado = ObterUsuarioSession();
+            return RedirectToAction("Index","Home");
+
+
+        }
+
+
 
     }
 }
