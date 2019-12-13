@@ -8,17 +8,28 @@
                         <img class="PostImagemPerfil" src="img/profiledefault.jpg">
                     </div>
                     <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
-                     <form class="FormCriarPost" method="POST" action='@Url.Action("Postar", "Home")'>
+                    <form class="FormCriarPost" method="POST" action='@Url.Action("Postar", "Home")'>
+                        
+                        <!-- codigo js para limitar caractere
+                        
+                        $(document).on("keydown", "#TxtObservacoes", function () {
+                    var caracteresRestantes = 255;
+                    var caracteresDigitados = parseInt($(this).val().length);
+                    var caracteresRestantes = caracteresRestantes - caracteresDigitados;
+            
+                    $(".caracteres").text(caracteresRestantes);
+                        }); -->
+
                         <textarea class="CriarPostMensagem" name="MensagemDoPost" placeholder="Poste uma mensagem..."></textarea>
                         <div class="BotaoCriarPostDiv">
                             <input class="BotaoCriarPost" type="submit" value="Postar">
 
                         </div>
-                     </form>
+                    </form>
 
                 </div>
+            <hr>
             }
-
             @foreach(Post post in Model.PostsDeTodos){
 
                 <div class="Post">

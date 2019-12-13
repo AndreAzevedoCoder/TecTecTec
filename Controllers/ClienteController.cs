@@ -9,6 +9,9 @@ using FeedbackMVC.Models;
 using FeedbackMVC.ViewModels;
 using FeedbackMVC.Repositories;
 using Microsoft.AspNetCore.Http;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
+using TecTecTec.Models;
 
 namespace FeedbackMVC.Controllers
 {
@@ -16,6 +19,22 @@ namespace FeedbackMVC.Controllers
     {
         ClienteRepository clienteRepository = new ClienteRepository();
         public IActionResult Login()
+        {
+
+            BaseViewModel baseviewmodel = new BaseViewModel();
+            baseviewmodel.UsuarioLogado = ObterUsuarioSession();
+            return View(baseviewmodel);
+
+        }
+        public IActionResult Cadastro()
+        {
+
+            BaseViewModel baseviewmodel = new BaseViewModel();
+            baseviewmodel.UsuarioLogado = ObterUsuarioSession();
+            return View(baseviewmodel);
+
+        }
+        public IActionResult index()
         {
 
             BaseViewModel baseviewmodel = new BaseViewModel();
@@ -31,21 +50,55 @@ namespace FeedbackMVC.Controllers
                 Cliente cliente = clienteRepository.ObterPorArroba(form["UsuarioArroba"]);
                 if(cliente.Senha == form["Senha"])
                 {
-                    BaseViewModel baseviewmodel = new BaseViewModel();
                     HttpContext.Session.SetString("Usuario",cliente.UsuarioArroba);
-                    baseviewmodel.UsuarioLogado = ObterUsuarioSession();
-                    return RedirectToAction("Index","Home",baseviewmodel);
+                    return RedirectToAction("Index","Home");
                 }else{
-                    return View("Senha nao bate");
+                    BaseViewModel baseviewmodel = new BaseViewModel();
+                    baseviewmodel.MensagemDeErro = "Senha não bate!";
+                    return View("login",baseviewmodel);
                 }
 
 
             }else
             {
-                return View("Usuario nao existe");
+                BaseViewModel baseviewmodel = new BaseViewModel();
+                baseviewmodel.MensagemDeErro = "Usuario não existe!";
+                return View("login",baseviewmodel);
             }
 
 
+        }
+
+
+
+        [HttpPost]
+        public IActionResult Cadastrar(IFormCollection form)
+        {
+            if(clienteRepository.Existe(form["UsuarioArroba"],"Usuario_Arroba") == false)
+            {
+                Cliente cliente = new Cliente();
+                cliente.UsuarioArroba = "@"+form["UsuarioArroba"];
+                cliente.UsuarioNome = form["UsuarioNome"];
+                cliente.Senha = form["Senha"];
+                clienteRepository.Inserir(cliente);
+                HttpContext.Session.SetString("Usuario",cliente.UsuarioArroba);
+                return RedirectToAction("Index","Home");
+
+
+
+            }else
+            {
+                BaseViewModel baseviewmodel = new BaseViewModel();
+                baseviewmodel.MensagemDeErro = "Usuario já existe!";
+                return View("login",baseviewmodel);
+            }
+
+
+        }
+        public IActionResult Logoff()
+        {
+            HttpContext.Session.Remove("Usuario");
+            return RedirectToAction("index","Home");
         }
         
     }

@@ -6,12 +6,16 @@ namespace FeedbackMVC.Repositories
     public class ClienteRepository
     {
         private const string PATH = "Database/Clientes.csv";
+
         public ClienteRepository(){
             if(!File.Exists(PATH)){
                 File.Create(PATH).Close();
             }
         }
         public bool Inserir (Cliente cliente){
+
+            string LocalDasImagens = "Database/"+cliente.UsuarioArroba;
+            File.Create(LocalDasImagens).Close();
             var linha = new string[] {PrepararRegistroCSV(cliente)};
             File.AppendAllLines(PATH, linha);
             

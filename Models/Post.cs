@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace FeedbackMVC.Models
@@ -14,10 +15,13 @@ namespace FeedbackMVC.Models
         public ulong IDDaListaDeComentarios {get;set;}
         public List<Comentario> ComentariosDoPost {get;set;}
 
+        public DateTime DataDaPostagem {get;set;}
         public Post()
         {
             this.ID = 0;
             this.Curtidas = 0;
+            this.DataDaPostagem = DateTime.Now;
+
             
         }
 

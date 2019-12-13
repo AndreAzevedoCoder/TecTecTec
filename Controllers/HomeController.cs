@@ -9,6 +9,7 @@ using FeedbackMVC.Models;
 using FeedbackMVC.ViewModels;
 using FeedbackMVC.Repositories;
 using Microsoft.AspNetCore.Http;
+using System.Text.RegularExpressions;
 
 namespace FeedbackMVC.Controllers
 {
@@ -22,6 +23,7 @@ namespace FeedbackMVC.Controllers
             ClienteViewModel clienteviewmodel = new ClienteViewModel();
             clienteviewmodel.PostsDeTodos = postRepository.ObterTodosOsPosts();
             clienteviewmodel.UsuarioLogado = ObterUsuarioSession();
+            clienteviewmodel.PostsDeTodos = clienteviewmodel.PostsDeTodos.OrderByDescending(x => x.DataDaPostagem).ToList();
             return View(clienteviewmodel);
 
         }
@@ -39,18 +41,25 @@ namespace FeedbackMVC.Controllers
         [HttpPost]
         public IActionResult Postar(IFormCollection form)
         {
-            Post post = new Post();
-            Cliente cliente = clienteRepository.ObterPorArroba(ObterUsuarioSession());
-            post.DonoDoPost = cliente.UsuarioNome;
-            post.DonoDoPostArroba = cliente.UsuarioArroba;
-            post.Curtidas = 0;
-            post.MensagemDoPost = form["MensagemDoPost"];
-            postRepository.Inserir(post);
+            if(form["MensagemDoPost"] != "")
+            {
+                Post post = new Post();
+                Cliente cliente = clienteRepository.ObterPorArroba(ObterUsuarioSession());
+                post.DonoDoPost = cliente.UsuarioNome;
+                post.DonoDoPostArroba = cliente.UsuarioArroba;
+                post.Curtidas = 0;
+                post.MensagemDoPost = form["MensagemDoPost"];
+                post.MensagemDoPost = Regex.Replace(post.MensagemDoPost, @"\t|\n|\r", "");
+                postRepository.Inserir(post);
 
-            ClienteViewModel clienteviewmodel = new ClienteViewModel();
-            clienteviewmodel.PostsDeTodos = postRepository.ObterTodosOsPosts();
-            clienteviewmodel.UsuarioLogado = ObterUsuarioSession();
-            return RedirectToAction("Index","Home");
+                ClienteViewModel clienteviewmodel = new ClienteViewModel();
+                clienteviewmodel.PostsDeTodos = postRepository.ObterTodosOsPosts();
+                clienteviewmodel.UsuarioLogado = ObterUsuarioSession();
+                return RedirectToAction("Index","Home");
+            }else{
+                return RedirectToAction("Index","Home");
+            }
+
 
 
         }

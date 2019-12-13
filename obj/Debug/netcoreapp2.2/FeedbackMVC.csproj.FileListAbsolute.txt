@@ -61,3 +61,35 @@ C:/Users/54094513841/Desktop/FeedbackMVC/obj/Debug/netcoreapp2.2/Razor/Views/Cli
 /home/satva/Documentos/TecTecTec/obj/Debug/netcoreapp2.2/FeedbackMVC.dll
 /home/satva/Documentos/TecTecTec/obj/Debug/netcoreapp2.2/FeedbackMVC.pdb
 /home/satva/Documentos/TecTecTec/obj/Debug/netcoreapp2.2/FeedbackMVC.csproj.CopyComplete
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\bin\Debug\netcoreapp2.2\FeedbackMVC.deps.json
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\bin\Debug\netcoreapp2.2\FeedbackMVC.runtimeconfig.json
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\bin\Debug\netcoreapp2.2\FeedbackMVC.runtimeconfig.dev.json
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\bin\Debug\netcoreapp2.2\FeedbackMVC.dll
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\bin\Debug\netcoreapp2.2\FeedbackMVC.pdb
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\bin\Debug\netcoreapp2.2\FeedbackMVC.Views.dll
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\bin\Debug\netcoreapp2.2\FeedbackMVC.Views.pdb
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.csprojAssemblyReference.cache
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.csproj.CoreCompileInputs.cache
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.RazorAssemblyInfo.cache
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.RazorAssemblyInfo.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.AssemblyInfoInputs.cache
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.AssemblyInfo.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.TagHelpers.input.cache
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.TagHelpers.output.cache
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.RazorCoreGenerate.cache
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\login.g.cshtml.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.RazorTargetAssemblyInfo.cache
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.RazorTargetAssemblyInfo.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.Views.pdb
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.dll
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.pdb
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\FeedbackMVC.csproj.CopyComplete
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\cadastro.g.cshtml.cs
+\\192.168.1.37\Repositorio\Tecnico Desenvolvimento\Area dos Alunos\paste\TecTecTec\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\index.g.cshtml.cs

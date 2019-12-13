@@ -15,29 +15,31 @@
     <body>
     
         <nav>
-
+            <div class="logo-area">
+                <img src="/img/LogoDino4.png" title="Logo">
+            </div>
             <div class="Navigator">
                 <ul> 
                     <li>
                         <a  asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i>Feed</a>
                     </li>
-                                        <!-- Não sei se essa página vai rolar, deem opinião -->
                     <li>
                         <a asp-controller="Agradecimento" asp-action="Index"><i class="fas fa-hand-holding-heart"></i>  Agradecimento</a>
                     </li>
+
                     @if(Model.UsuarioLogado == "")
                     {
-
-
                         <li>
                             <a asp-controller="Cliente" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Login</a>
                         </li>
                         <li>
-                            <a asp-controller="Cadastro" asp-action="Index"><i class="fas fa-user-plus"></i> Cadastro</a>
+                            <a asp-controller="Cliente" asp-action="Cadastro"><i class="fas fa-user-plus"></i> Cadastro</a>
                         </li>
-                    }else{
+                    }
+                    else
+                    {
                         <li>
-                            <a  asp-controller="Cliente" asp-action="Usuário"><i class="fas fa-user-circle"></i>   Usuário</a>
+                            <a  asp-controller="Cliente" asp-action="index"><i class="fas fa-user-circle"></i>   Usuário</a>
                         </li>
 
                         <li>
