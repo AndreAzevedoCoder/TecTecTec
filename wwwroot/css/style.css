@@ -1,4 +1,3 @@
-
 /**################### GERALZÃO ###################**/
 *{
     margin: 0;
@@ -92,6 +91,10 @@ nav ul > li > a:hover {
     border-radius: 32px;
 }
 
+nav #bt-mobile-menu {
+    display: none;
+}
+
 /**################### /NAV ###################**/
 
 /**################### HOME ###################**/
@@ -110,10 +113,12 @@ hr{
     background-color: #431969;
     width: 40em;
 }
+
 .FormCriarPost
 {
     width: 100%;
 }
+
 .CriarPostMensagem
 {
     border: none;
@@ -145,8 +150,16 @@ hr{
     border-width: 0.5px;
     margin-top: 1em;
     margin-bottom: 1em;
+    position: relative;
 }
-
+.ExcluirPost{
+    position: absolute;
+    top: 1.5em;
+    right: 3em;
+}
+.ExcluirPost:hover{
+    cursor: pointer;
+}
 .PostHeader *{
     
     display: inline;
@@ -176,7 +189,7 @@ hr{
 .PostImagemPerfil
 {
     border-radius: 35px;
-    widows: 4em;
+    width: 4em;
     height: 4em;
 }
 
@@ -319,11 +332,93 @@ form input#entrar:hover {
 
 @media(max-width: 1400px){
     .logo-area > img {
-        margin: 2em 0 0 -10em;
+        margin: 2em 0 0 -9em;
         width: 12em;
     }
 
     nav {
-        margin-left: 15%;
+        margin-left: 12%;
+    }
+
+    .Post{
+        margin-left: 10em;
+    }
+
+    .CriarPost{
+        margin-left: 10em;
+    }
+
+    hr{
+        width: 54%;
+        margin-left: 9em;
+    }
+}
+
+@media(max-width: 1200px){
+    .logo-area > img {
+        margin: 2em 0 0 -8em;
+        width: 12em;
+    }
+
+    nav {
+        margin-left: 14.5%;
+    }
+
+    .Post{
+        width: 30em;
+    }
+
+    .CriarPost{
+        width: 30em;
+    }
+
+    hr{
+        width: 47%;
+        margin-left: 9.5em;
+    }
+}
+
+@media(max-width: 850px){
+    .logo-area > img {
+        visibility: hidden;
+    }
+
+    nav{
+        margin-left: 18%;
+        margin-top: -10em;
+    }
+    /********************************************
+                    nav - mobile
+    ********************************************/
+    nav #bt-mobile-menu {
+        display: block;
+    }
+
+    nav .bt-common-menu {
+        display: none;
+    }
+
+    nav .bt-common-menu.active {
+        display: block;
+    }
+
+    nav ul.mobile-mode {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 740px){
+    .Post{
+        margin-left: 6em;
+    }
+
+    .CriarPost{
+        margin-left: 6em;
+    }
+
+    hr{
+        width: 47%;
+        margin-left: 9em;
     }
 }

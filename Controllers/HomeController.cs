@@ -10,6 +10,8 @@ using FeedbackMVC.ViewModels;
 using FeedbackMVC.Repositories;
 using Microsoft.AspNetCore.Http;
 using System.Text.RegularExpressions;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace FeedbackMVC.Controllers
 {
@@ -17,6 +19,16 @@ namespace FeedbackMVC.Controllers
     {
         PostRepository postRepository = new PostRepository();
         ClienteRepository clienteRepository = new ClienteRepository();
+
+        public IHostingEnvironment _env;
+        private string _dir;
+        public HomeController(IHostingEnvironment env)
+        {
+            _env = env;
+
+
+
+        }
         public IActionResult Index()
         {
 
@@ -48,8 +60,7 @@ namespace FeedbackMVC.Controllers
                 post.DonoDoPost = cliente.UsuarioNome;
                 post.DonoDoPostArroba = cliente.UsuarioArroba;
                 post.Curtidas = 0;
-                post.MensagemDoPost = form["MensagemDoPost"];
-                post.MensagemDoPost = Regex.Replace(post.MensagemDoPost, @"\t|\n|\r", "");
+                post.MensagemDoPost = Regex.Replace(form["MensagemDoPost"], @"\t|\n|\r", "");
                 postRepository.Inserir(post);
 
                 ClienteViewModel clienteviewmodel = new ClienteViewModel();
@@ -59,10 +70,34 @@ namespace FeedbackMVC.Controllers
             }else{
                 return RedirectToAction("Index","Home");
             }
+        }
 
+        [HttpPost]
+        public IActionResult ExcluirPost(IFormCollection form)
+        {
+            
+                postRepository.Remover(Convert.ToUInt64(form["ID"]));
 
+                ClienteViewModel clienteviewmodel = new ClienteViewModel();
+                clienteviewmodel.PostsDeTodos = postRepository.ObterTodosOsPosts();
+                clienteviewmodel.UsuarioLogado = ObterUsuarioSession();
+                return RedirectToAction("Index","Home");
 
         }
+
+        [HttpPost]
+        public IActionResult UploadFotoDePerfil(IFormFile file)
+        {
+
+            _dir = _env.ContentRootPath+"/wwwroot/ArquivosDosClientes/"+ObterUsuarioSession();
+            using (var fileStream = new FileStream(Path.Combine(_dir, "perfil.png"), FileMode.Create, FileAccess.Write))
+            {
+                file.CopyTo(fileStream);
+            }
+
+            return RedirectToAction("Index","Home");
+        }
+
 
 
 

@@ -20,30 +20,33 @@
             </div>
             <div class="Navigator">
                 <ul> 
-                    <li>
-                        <a  asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i>Feed</a>
+                    <li id="bt-mobile-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()"><i class="fa fa-bars"></i></a>
                     </li>
-                    <li>
-                        <a asp-controller="Agradecimento" asp-action="Index"><i class="fas fa-hand-holding-heart"></i>  Agradecimento</a>
+                    <li class="bt-common-menu">
+                        <a onclick="toggleMobileMenu()" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i>Feed</a>
+                    </li>
+                    <li class="bt-common-menu">
+                        <a onclick="toggleMobileMenu()" asp-controller="Agradecimento" asp-action="Index"><i class="fas fa-hand-holding-heart"></i>  Agradecimento</a>
                     </li>
 
                     @if(Model.UsuarioLogado == "")
                     {
-                        <li>
-                            <a asp-controller="Cliente" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        <li class="bt-common-menu">
+                            <a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Login</a>
                         </li>
-                        <li>
-                            <a asp-controller="Cliente" asp-action="Cadastro"><i class="fas fa-user-plus"></i> Cadastro</a>
+                        <li class="bt-common-menu">
+                            <a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Cadastro"><i class="fas fa-user-plus"></i> Cadastro</a>
                         </li>
                     }
                     else
                     {
-                        <li>
-                            <a  asp-controller="Cliente" asp-action="index"><i class="fas fa-user-circle"></i>   Usuário</a>
+                        <li class="bt-common-menu">
+                            <a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="index"><i class="fas fa-user-circle"></i>   Usuário</a>
                         </li>
 
-                        <li>
-                            <a asp-controller="Cliente" asp-action="Logoff"><i class="fas fa-running"></i> Sair</a>
+                        <li class="bt-common-menu">
+                            <a onclick="toggleMobileMenu()" asp-controller="Cliente" asp-action="Logoff"><i class="fas fa-running"></i> Sair</a>
                         </li>
                     }
 
@@ -51,8 +54,34 @@
             </div>
         </nav>
     @RenderBody();
-
-
-
+        <script>
+            function toggleMobileMenu() {
+                var ul = document.querySelector("nav ul");
+                var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+                var icon = document.querySelector(".icon > i");
+    
+                ul.classList.toggle("mobile-mode");
+    
+                if (icon.classList.contains("fa-bars")) {
+                    icon.classList.remove("fa-bars");
+                    icon.classList.remove("fa");
+    
+                    icon.classList.add("fas");
+                    icon.classList.add("fa-times");
+                } else {
+                    icon.classList.remove("fas");
+                    icon.classList.remove("fa-times");
+    
+                    icon.classList.add("fa");
+                    icon.classList.add("fa-bars");
+                }
+    
+                for (var button of commonButtons) {
+                    button.classList.toggle("active");
+                }
+    
+            }
+            
+        </script>
     </body>
 </html>

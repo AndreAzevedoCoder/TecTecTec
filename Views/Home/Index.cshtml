@@ -1,11 +1,16 @@
 ﻿@model FeedbackMVC.ViewModels.ClienteViewModel
+@{
 
+ViewData["Usuario"] = @Model.UsuarioLogado;
+var link = "ArquivosDosClientes/"+ViewData["Usuario"]+"/perfil.png";
+}
         <main>
             @if(Model.UsuarioLogado != "")
             {
                 <div class="CriarPost">
                     <div class="PostHeader">
-                        <img class="PostImagemPerfil" src="img/profiledefault.jpg">
+                        <h1></h1>
+                            <img class="PostImagemPerfil" src=@link>
                     </div>
                     <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
                     <form class="FormCriarPost" method="POST" action='@Url.Action("Postar", "Home")'>
@@ -20,10 +25,9 @@
                     $(".caracteres").text(caracteresRestantes);
                         }); -->
 
-                        <textarea class="CriarPostMensagem" name="MensagemDoPost" placeholder="Poste uma mensagem..."></textarea>
+                        <textarea class="CriarPostMensagem" minlength="1" maxlength="140" name="MensagemDoPost" placeholder="Poste uma mensagem..."></textarea>
                         <div class="BotaoCriarPostDiv">
                             <input class="BotaoCriarPost" type="submit" value="Postar">
-
                         </div>
                     </form>
 
@@ -31,14 +35,24 @@
             <hr>
             }
             @foreach(Post post in Model.PostsDeTodos){
-
+                var postperfilimagem = "ArquivosDosClientes/"+post.DonoDoPostArroba+"/perfil.png";
                 <div class="Post">
                     <div class="PostHeader">
-                        <img class="PostImagemPerfil" src="img/profiledefault.jpg">
+                            <img class="PostImagemPerfil" src=@postperfilimagem>
                         <div class="PostUserInformacao">
                             <p class="PostDonoNome">@post.DonoDoPost</p>
                             <p class="PostDonoUsuario">@post.DonoDoPostArroba</p>
                         </div>
+                        @if(@Model.UsuarioLogado == post.DonoDoPostArroba)
+                        {
+                            <form method="Post" asp-controller="Home" asp-action="ExcluirPost">
+                                <input type="hidden" value=@post.ID name="ID">
+                                <button style="border:none;">
+                                    <i class="fas ExcluirPost fa-trash" style="color: white;"></i>
+                                </button>
+
+                            </form>
+                        }
                     </div>
                     <div class="PostBody">
                         <p class="PostMensagem">@post.MensagemDoPost</p>

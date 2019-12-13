@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using FeedbackMVC.Models;
 
 namespace FeedbackMVC.Repositories
@@ -48,6 +50,26 @@ namespace FeedbackMVC.Repositories
             return TodosOsPosts;
         }
 
+
+        public void Remover(ulong ID)
+        {
+
+            var linhas = File.ReadAllLines(PATH);
+            
+            for(int i = 0; i < linhas.Length; i++){
+                if(Convert.ToUInt64(ExtrairValorDoCampo("ID", linhas[i])) == ID)
+                {
+                    List<string> ListaLinhas = linhas.ToList();
+                    ListaLinhas.Remove(linhas[i]);
+
+                    linhas = ListaLinhas.ToArray();
+                    File.WriteAllLines(PATH, linhas);
+                    break;
+                }
+                    
+            }
+
+        }
 
         public string ExtrairValorDoCampo(string nomeCampo, string linha){
             var chave = nomeCampo;

@@ -6,16 +6,27 @@ namespace FeedbackMVC.Repositories
     public class ClienteRepository
     {
         private const string PATH = "Database/Clientes.csv";
-
+        private const string ARQUIVOSDOSCLIENTES = "wwwroot/ArquivosDosClientes";
         public ClienteRepository(){
             if(!File.Exists(PATH)){
                 File.Create(PATH).Close();
             }
+            if(!File.Exists(ARQUIVOSDOSCLIENTES)){
+                Directory.CreateDirectory(ARQUIVOSDOSCLIENTES);
+            }
         }
         public bool Inserir (Cliente cliente){
 
-            string LocalDasImagens = "Database/"+cliente.UsuarioArroba;
-            File.Create(LocalDasImagens).Close();
+            var quantidadeLinhas = File.ReadAllLines(PATH).Length;
+            cliente.ID = (ulong) ++quantidadeLinhas;
+            string nomedocliente = cliente.UsuarioArroba;
+
+            
+            string LocalDasImagens = "wwwroot/ArquivosDosClientes/"+nomedocliente;
+            Directory.CreateDirectory(LocalDasImagens);
+
+            System.IO.File.Copy("wwwroot/img/perfil.png",LocalDasImagens);
+
             var linha = new string[] {PrepararRegistroCSV(cliente)};
             File.AppendAllLines(PATH, linha);
             

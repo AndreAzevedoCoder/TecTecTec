@@ -1,8 +1,4 @@
-
-<main>
-    new { enctype = "multipart/form-data" })){  
-    <label for="file">Upload Image:</label> 
-    <input type="file" name="file" id="file" style="width: 100%;" /> 
-    <input type="submit" value="Upload" class="submit" /> 
-    }
-</main>
+<form asp-controller="Home" asp-action="UploadFotoDePerfil" enctype="multipart/form-data" method="post">
+    <input type="file" name="file" />
+    <input type="submit">
+</form>
