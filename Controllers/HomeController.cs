@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Http;
 using System.Text.RegularExpressions;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using TecTecTec.Models;
 
 namespace FeedbackMVC.Controllers
 {
@@ -19,6 +20,7 @@ namespace FeedbackMVC.Controllers
     {
         PostRepository postRepository = new PostRepository();
         ClienteRepository clienteRepository = new ClienteRepository();
+        CurtidaRepository curtidaRepository = new CurtidaRepository();
 
         public IHostingEnvironment _env;
         private string _dir;
@@ -36,6 +38,7 @@ namespace FeedbackMVC.Controllers
             clienteviewmodel.PostsDeTodos = postRepository.ObterTodosOsPosts();
             clienteviewmodel.UsuarioLogado = ObterUsuarioSession();
             clienteviewmodel.PostsDeTodos = clienteviewmodel.PostsDeTodos.OrderByDescending(x => x.DataDaPostagem).ToList();
+            clienteviewmodel.OQueEuCurti = curtidaRepository.ObterTudoQueCurti(ObterUsuarioSession());
             return View(clienteviewmodel);
 
         }
@@ -46,7 +49,7 @@ namespace FeedbackMVC.Controllers
             clienteviewmodel.PostsDeTodos = postRepository.ObterTodosOsPosts();
             clienteviewmodel.UsuarioLogado = ObterUsuarioSession();
             
-            return View(clienteviewmodel);
+            return View("index",clienteviewmodel); //TODO MEXI AQ
         }
 
 
@@ -70,6 +73,33 @@ namespace FeedbackMVC.Controllers
             }else{
                 return RedirectToAction("Index","Home");
             }
+        }
+
+        [HttpPost]
+        public IActionResult CurtirPost(IFormCollection form)
+        {
+            Curtida curtida = new Curtida();
+            curtida.Curtidor = ObterUsuarioSession();
+            curtida.IDDoPost = Convert.ToUInt64(form["ID"]);
+
+            curtidaRepository.Inserir(curtida);
+
+            ClienteViewModel clienteviewmodel = new ClienteViewModel();
+            clienteviewmodel.PostsDeTodos = postRepository.ObterTodosOsPosts();
+            clienteviewmodel.UsuarioLogado = ObterUsuarioSession();
+            return RedirectToAction("Index","Home");
+        }
+
+
+        [HttpPost]
+        public IActionResult DescurtirPost(IFormCollection form)
+        {
+            curtidaRepository.Remover(Convert.ToUInt64(form["ID"]));
+
+            ClienteViewModel clienteviewmodel = new ClienteViewModel();
+            clienteviewmodel.PostsDeTodos = postRepository.ObterTodosOsPosts();
+            clienteviewmodel.UsuarioLogado = ObterUsuarioSession();
+            return RedirectToAction("Index","Home");
         }
 
         [HttpPost]

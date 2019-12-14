@@ -48,7 +48,7 @@ var link = "ArquivosDosClientes/"+ViewData["Usuario"]+"/perfil.png";
                             <form method="Post" asp-controller="Home" asp-action="ExcluirPost">
                                 <input type="hidden" value=@post.ID name="ID">
                                 <button style="border:none;">
-                                    <i class="fas ExcluirPost fa-trash" style="color: white;"></i>
+                                    <i class="fas ExcluirPost fa-14x fa-trash" style="color: white;"></i>
                                 </button>
 
                             </form>
@@ -58,9 +58,47 @@ var link = "ArquivosDosClientes/"+ViewData["Usuario"]+"/perfil.png";
                         <p class="PostMensagem">@post.MensagemDoPost</p>
                     </div>
                     <div class="PostFooter">
-                        <i class="far fa-comment"></i>
-                        <i class="fas fa-retweet"></i>
-                        <i class="far fa-heart"></i>
+                        @if(Model.UsuarioLogado != "")
+                        {
+
+                            <i class="far fa-14x  fa-comment"></i>
+                            <i class="fas fa-14x  fa-retweet"></i>
+                            
+                            
+                            bool achou = false;
+                            
+
+                            @foreach (var item in @Model.OQueEuCurti)
+                            {
+                                @if(item == @post.ID)
+                                {
+                                    <form method="Post" asp-controller="Home" asp-action="DescurtirPost">
+                                        <input type="hidden" value=@post.ID name="ID">
+                                        <button style="border:none; background: none;">
+                                            <i class="fas fa-14x fa-heart" style="color: yellow;"></i>
+                                        </button>
+                                    </form>
+                                    achou = true;
+                                    break;
+                                }
+                            }
+
+                            @if(@achou == false)
+                            {
+                                <form method="Post" asp-controller="Home" asp-action="CurtirPost">
+                                    <input type="hidden" value=@post.ID name="ID">
+                                    <button style="border:none; background: none;">
+                                        <i class="far fa-14x fa-heart"></i>
+                                    </button>
+                                </form>
+                            }
+
+                        }else{
+
+                            <i class="far fa-14x fa-comment"></i>
+                            <i class="fas fa-14x fa-retweet"></i>
+                            <i class="far fa-14x fa-heart"></i>
+                        }
                     </div>
 
                 </div>
